@@ -6,4 +6,4 @@ argparse==1.4.0
 python-dotenv==1.0.1
 botocore==1.36.2
 flask-cors==5.0.1
-dotenv==1.0.1
+
