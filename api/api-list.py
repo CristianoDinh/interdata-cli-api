@@ -1,6 +1,7 @@
 import subprocess
 from flask import Flask, jsonify
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)  # Cho phép CORS để Angular có thể gọi API
@@ -9,8 +10,11 @@ CORS(app)  # Cho phép CORS để Angular có thể gọi API
 @app.route('/buckets', methods=['GET'])
 def list_buckets():
     try:
+        # In ra đường dẫn hiện tại của script
+        print("Current working directory:", os.getcwd())
+
         # Gọi CLI để lấy danh sách bucket
-        result = subprocess.run(['python', './list_v3.py', '--allBuckets'], capture_output=True, text=True)
+        result = subprocess.run(['python', 'list_v3.py', '--allBuckets'], capture_output=True, text=True)
 
         # Kiểm tra lỗi khi chạy subprocess
         if result.returncode != 0:
