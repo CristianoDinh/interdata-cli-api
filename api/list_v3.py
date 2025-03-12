@@ -5,7 +5,7 @@ This version is upgraded from list_v3.py(Ver1)
 from argparse import ArgumentParser, Namespace
 import boto3, sys, os
 from datetime import datetime
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 parser = ArgumentParser()
 #parser.usage
