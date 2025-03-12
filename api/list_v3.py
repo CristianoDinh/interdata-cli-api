@@ -20,7 +20,7 @@ group.add_argument("-ao", "--allObjects", help = ":List all S3 objects", action 
 args : Namespace = parser.parse_args()
 
 # Load file .env
-load_dotenv()
+#load_dotenv()
 
 # Read parameter from .env (environment variable)
 ENDPOINT_URL = os.getenv('S3_ENDPOINT')
