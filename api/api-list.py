@@ -10,7 +10,6 @@ CORS(app)  # Cho phép CORS để Angular có thể gọi API
 @app.route('/buckets', methods=['GET'])
 def list_buckets():
     try:
-
         # Gọi CLI để lấy danh sách bucket
         result = subprocess.run(['python', 'list_v3.py', '--allBuckets'], capture_output=True, text=True)
 
