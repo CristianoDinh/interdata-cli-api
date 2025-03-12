@@ -57,7 +57,7 @@ def list_buckets():
 def list_objects(bucket_name):
     try:
         # Gọi CLI với bucket_name
-        result = subprocess.run(['python', 'list_v3.py', bucket_name, '--allObjects'], capture_output=True, text=True)
+        result = subprocess.run(['python', 'api/list_v3.py', bucket_name, '--allObjects'], capture_output=True, text=True)
 
         # Kiểm tra lỗi khi chạy subprocess
         if result.returncode != 0:
