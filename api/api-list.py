@@ -45,7 +45,10 @@ def list_buckets():
 
         return jsonify(buckets)
     except Exception as e:
-        return jsonify({'error': str(e), 'current_directory': os.getcwd()}), 500
+        return jsonify({
+                        'current_directory': os.getcwd(),
+                        'error': str(e)
+                        }), 500
 
 # 3. API lấy danh sách objects trong bucket
 @app.route('/<bucket_name>/objects', methods=['GET'])
