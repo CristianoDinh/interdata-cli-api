@@ -1,9 +1,9 @@
 import subprocess
 from flask import Flask, jsonify
-# from flask_cors import CORS
+from flask_cors import CORS
 
 app = Flask(__name__)
-#CORS(app)  # Cho phép CORS để Angular có thể gọi API
+CORS(app)  # Cho phép CORS để Angular có thể gọi API
 
 # 2. API lấy danh sách buckets
 @app.route('/buckets', methods=['GET'])
@@ -127,5 +127,5 @@ def home():
     """
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
