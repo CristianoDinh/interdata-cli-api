@@ -47,7 +47,7 @@ def list_buckets():
     except Exception as e:
         return jsonify({
                         'current_directory': os.getcwd(),
-                        'error': str(e)
+                        'errorrr': str(e)
                         }), 500
 
 # 3. API lấy danh sách objects trong bucket
