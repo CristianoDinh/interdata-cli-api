@@ -11,7 +11,7 @@ CORS(app)  # Cho phép CORS để Angular có thể gọi API
 def list_buckets():
     try:
         # Gọi CLI để lấy danh sách bucket
-        result = subprocess.run(['python', '../../list_v3.py', '--allBuckets'], capture_output=True, text=True)
+        result = subprocess.run(['cd ../..','python', 'list_v3.py', '--allBuckets'], capture_output=True, text=True)
 
         # Kiểm tra lỗi khi chạy subprocess
         if result.returncode != 0:
@@ -46,7 +46,7 @@ def list_buckets():
     except Exception as e:
         return jsonify({
                         'current_directory': os.getcwd(),
-                        'errorrr': str(e)
+                        'error': str(e)
                         }), 500
 
 # 3. API lấy danh sách objects trong bucket
